@@ -1,3 +1,5 @@
+----
+---
 repeat wait() until game:IsLoaded()
 
 _G.iiiiiiiiiiiiiiiiiii = false
@@ -470,7 +472,6 @@ if data.success == false then
             local headers = {
                ["content-type"] = "application/json"
             }
-            request = http_request or request or HttpPost or syn.request
             local abcdef = {Url = webhooklog, Body = newdata, Method = "POST", Headers = headers}
             request(abcdef)
         end
@@ -545,7 +546,6 @@ if data.success == false then
             local headers = {
                ["content-type"] = "application/json"
             }
-            request = http_request or request or HttpPost or syn.request
             local abcdef = {Url = webhooklog, Body = newdata, Method = "POST", Headers = headers}
             request(abcdef)
         end
@@ -643,11 +643,9 @@ function Webhook(webhooklog, x)
     }
 
     local newdata = game:GetService("HttpService"):JSONEncode(Dataforever)
-
     local headers = {
        ["content-type"] = "application/json"
     }
-    request = http_request or request or HttpPost or syn.request
     local abcdef = {Url = webhooklog, Body = newdata, Method = "POST", Headers = headers}
     request(abcdef)
 end
@@ -681,3 +679,6 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
 end)
 
 _G.AfkForEver = true
+
+getgenv().script_key = "6LkhzA-wMDPh3-O7C19N-1awbVM-DBrtGP-TBnjGG"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/OzNL-Hub/OzNL-HUB-Regular/main/z.lua"))()
